@@ -21,6 +21,10 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('*', (req, res) => {
+  res.send('404');
+});
+
 app.listen(port, () => {
   console.log(`Listening on http://localhost:${port}`);
 })
