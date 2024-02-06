@@ -24,9 +24,12 @@ app.get('/cookie-dynamic-yield', (req, res) => {
     res.json({msg: 'No se encontro cookie'})
   }
 
+  const oneYear = 31536000000;
+  const expires = new Date(Date.now() + oneYear);
+
   res.cookie('_dyid_server', dyid, { // store a new server-side cookie named "_dyid_server" with the DYID value
-    expires: new Date(Date.now() + 31540000000000), // Set a 1 year expiration for the new cookie
-  }).status(200).json({msg: 'Se encontro cookie'});
+    expires, // Set a 1 year expiration for the new cookie
+  }).status(200).json({msg: 'Se retorna cookie _dyid_server'});
 });
 
 app.post('/cookie-dynamic-yield', (req, res) => {
@@ -37,10 +40,12 @@ app.post('/cookie-dynamic-yield', (req, res) => {
     res.json({msg: 'No se encontro cookie'})
   }
 
+  const oneYear = 31536000000;
+  const expires = new Date(Date.now() + oneYear);
+
   res.cookie('_dyid_server', dyid, { // store a new server-side cookie named "_dyid_server" with the DYID value
-    path: 'https://www.farmatodo.com.co/',
-    expires: new Date(Date.now() + 31540000000000), // Set a 1 year expiration for the new cookie
-  }).status(200).json({msg: 'Se encontro cookie'});
+    expires, // Set a 1 year expiration for the new cookie
+  }).status(200).json({msg: 'Se retorna cookie _dyid_server'});
 });
 
 app.listen(port, () => {
