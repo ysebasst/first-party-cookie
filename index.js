@@ -21,7 +21,7 @@ app.get('/cookie-dynamic-yield', (req, res) => {
   const dyid = req.headers['dyid'];
   console.log(dyid)
   if (!dyid) {
-    res.json({msg: 'No se encontro cookie'})
+    res.status(400).json({msg: 'No se encontro cookie'})
   }
 
   const oneYear = 31536000000;
@@ -37,7 +37,7 @@ app.post('/cookie-dynamic-yield', (req, res) => {
   const dyid = req.body['dyid'];
   console.log(dyid)
   if (!dyid) {
-    res.json({msg: 'No se encontro cookie'})
+    res.status(400).json({msg: 'No se encontro cookie'})
   }
 
   const oneYear = 31536000000;
