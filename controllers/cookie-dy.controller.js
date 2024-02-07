@@ -20,8 +20,8 @@ cookieController.firstPartyCookie = (req, res) => {
 
   res.cookie('_dyid_server', dyid, { // store a new server-side cookie named "_dyid_server" with the DYID value
     expires, // Set a 1 year expiration for the new cookie
-    domain: '.onrender.com',
-  }).status(200).json({msg: 'Se retorna cookie _dyid_server'});
+    domain: 'https://test-ookie-dot-staging-dot-web-farmatodo.uc.r.appspot.com/',
+  }).status(200).json({msg: 'Se retorna cookie _dyid_server', data: {dyid, expires: expires.toUTCString()}});
 };
 
 module.exports = cookieController;
